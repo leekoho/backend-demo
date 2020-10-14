@@ -15,4 +15,9 @@ export class AreaController {
   async children(@Param('parentId') parentId: number): Promise<AreaEntity[]> {
     return await this.areaService.findChildrenByParentId(parentId)
   }
+
+  @Get('/areas')
+  async allAreas(): Promise<AreaEntity[]> {
+    return await this.areaService.findAll()
+  }
 }

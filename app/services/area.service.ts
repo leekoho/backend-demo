@@ -21,6 +21,10 @@ export class AreaService {
     })
   }
 
+  findAll(): Promise<AreaEntity[]> {
+    return this.repository.find()
+  }
+
   findByDepth(depth: number): Promise<AreaEntity[]> {
     return this.repository.find({ depth })
   }

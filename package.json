@@ -7,7 +7,7 @@
     "test": "jest --config .jest.config.js --no-cache --detectOpenHandles",
     "prettier": "prettier --write .",
     "dev": "export NODE_ENV=development; nodemon --config nodemon.json",
-    "build": "bash ./build.sh",
+    "build": "export NODE_ENV=production; bash ./build.sh",
     "mongo": "docker-compose -f compose.yml up -d"
   },
   "engines": {
@@ -34,6 +34,7 @@
     "dotenv": "^8.2.0",
     "koa": "^2.12.0",
     "koa-bodyparser": "^4.3.0",
+    "koa-compress": "^5.0.1",
     "koa-logger": "^3.2.1",
     "koa-multer": "^1.0.2",
     "koa-router": "^8.0.8",
