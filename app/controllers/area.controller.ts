@@ -7,11 +7,11 @@ export class AreaController {
   constructor(private areaService: AreaService) {}
 
   @Get('/area/:id')
-  async area(@Param('id') id: number): Promise<AreaEntity | Error> {
+  async area(@Param('id') id: number): Promise<AreaEntity> {
     return await this.areaService.findById(id)
   }
 
-  @Get('/area/children/:parentId')
+  @Get('/area/:parentId/children')
   async children(@Param('parentId') parentId: number): Promise<AreaEntity[]> {
     return await this.areaService.findChildrenByParentId(parentId)
   }
